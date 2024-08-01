@@ -31,8 +31,13 @@ jobs:
           python -m venv venv
           source venv/bin/activate
 
+      - name: Copy pyproject-build.toml to pyproject.toml
+        run: cp pyproject-build.toml pyproject.toml
+
       - name: Install dependencies
-        run: pip install -r requirements.txt
+        run: |
+          python -m pip install --upgrade pip
+          pip install .
 
       # Optional: Add step to run tests here
 
