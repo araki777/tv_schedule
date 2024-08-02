@@ -54,7 +54,7 @@ def main(mytimer: TimerRequest) -> None:
 
       # chromeドライバのオプションを設定
     chrome_options = webdriver.ChromeOptions()
-    chrome_options.binary_location = "./binary/google-chrome"  # もしくは Chrome ブラウザの実行ファイルのパスを指定
+    chrome_options.binary_location = "./google-chrome"  # もしくは Chrome ブラウザの実行ファイルのパスを指定
     chrome_options.add_argument("--headless")  # ヘッドレスモードで起動する場合
     chrome_options.add_argument("--no-sandbox")  # セキュリティ対策のためのオプション
 
