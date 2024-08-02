@@ -16,6 +16,24 @@ env:
   PYTHON_VERSION: '3.10' # set this to the python version to use (supports 3.6, 3.7, 3.8)
 
 jobs:
+  label:
+    permissions:
+      issues: write
+      contents: read
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+      
+      - name: Install dependencies
+        run: npm install --save-dev @azu/github-label-setup
+
+      - name: update label
+        run: npx github-label-setup --token ${{ secrets.GITHUB_TOKEN }} --labels .github/labels.json
+
   build:
     runs-on: ubuntu-latest
     steps:

@@ -1,0 +1,86 @@
+[
+    {
+      "name": "bug🐛",
+      "color": "E57373",
+      "aliases": [],
+      "description": "バグや不具合に関する問題",
+      "delete": false
+    },
+    {
+      "name": "priority: high⚠️",
+      "color": "FF7043",
+      "aliases": [],
+      "description": "高優先度",
+      "delete": false
+    },
+    {
+      "name": "priority: low🟢",
+      "color": "81C784",
+      "aliases": [],
+      "description": "低優先度",
+      "delete": false
+    },
+    {
+      "name": "feature🚀",
+      "color": "64B5F6",
+      "aliases": [],
+      "description": "新機能や機能追加に関するリクエスト",
+      "delete": false
+    },
+    {
+      "name": "enhancement✨",
+      "color": "AB47BC",
+      "aliases": [],
+      "description": "既存機能の改善や拡張",
+      "delete": false
+    },
+    {
+      "name": "docs📝",
+      "color": "81C784",
+      "aliases": [],
+      "description": "ドキュメント全般に関連する問題",
+      "delete": false
+    },
+    {
+      "name": "docs_update🔄",
+      "color": "FFD54F",
+      "aliases": [],
+      "description": "ドキュメントの更新が必要な場合",
+      "delete": false
+    },
+    {
+      "name": "docs_new🆕",
+      "color": "AB47BC",
+      "aliases": [],
+      "description": "新しいドキュメントが必要な場合",
+      "delete": false
+    },
+    {
+      "name": "refactor🔧",
+      "color": "64B5F6",
+      "aliases": [],
+      "description": "機能や動作には変更を加えないリファクタリングの場合",
+      "delete": false
+    },
+    {
+      "name": "cleanup🧹",
+      "color": "81C784",
+      "aliases": [],
+      "description": "不要なコードやコメント、使われていないファイルを削除する場合",
+      "delete": false
+    },
+    {
+      "name": "improvement🚀",
+      "color": "FF7043",
+      "aliases": [],
+      "description": "コードのパフォーマンスや機能を向上させるための変更",
+      "delete": false
+    },
+    {
+      "name": "note🗒️",
+      "color": "B0BEC5",
+      "aliases": [],
+      "description": "注記やメモ",
+      "delete": false
+    }
+  ]
