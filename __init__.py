@@ -1,12 +1,10 @@
 import requests
-from time import sleep
 from dotenv import load_dotenv
 import os
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 import logging
 from datetime import datetime, timedelta
-from azure.functions import TimerRequest
 
 # .envファイルの読み込み
 load_dotenv()
@@ -29,7 +27,7 @@ def line_notify(message):
 
 def get_next_week_dates():
     today = datetime.today()
-    return [(today + timedelta(days=i)).strftime("%Y%m%d") for i in range(2)]
+    return [(today + timedelta(days=i)).strftime("%Y%m%d") for i in range(7)]
 
 
 def get_channels(driver):
@@ -49,17 +47,17 @@ def load_existing_entries(filename):
     return []
 
 
-def main(mytimer: TimerRequest) -> None:
+def main():
     logging.info("Python timer trigger function started.")
 
       # chromeドライバのオプションを設定
     chrome_options = webdriver.ChromeOptions()
-    chrome_options.binary_location = "./google-chrome"  # もしくは Chrome ブラウザの実行ファイルのパスを指定
+    chrome_options.binary_location = os.getenv("CHROME_BINARY_PATH")  # もしくは Chrome ブラウザの実行ファイルのパスを指定
     chrome_options.add_argument("--headless")  # ヘッドレスモードで起動する場合
     chrome_options.add_argument("--no-sandbox")  # セキュリティ対策のためのオプション
 
     # Chromeドライバーのパスを指定
-    chrome_driver_path = os.getenv("WEB_DRIVER_PATH")
+    chrome_driver_path = os.getenv("CHROME_DRIVER_PATH")
 
     # Chromeドライバーを起動するためのサービスを設定
     chrome_service = webdriver.chrome.service.Service(chrome_driver_path)

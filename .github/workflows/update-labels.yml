@@ -1,0 +1,28 @@
+name: Update labels
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - "../labels.json"
+  workflow_dispatch:
+
+jobs:
+    label:
+    permissions:
+      issues: write
+      contents: read
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+
+      - name: Install dependencies
+        run: npm install --save-dev @azu/github-label-setup
+
+      - name: update label
+        run: npx github-label-setup --token ${{ secrets.GITHUB_TOKEN }} --labels .github/labels.json
